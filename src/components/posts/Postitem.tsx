@@ -1,21 +1,50 @@
 import './postitem.css'
-import { Post } from '../../redux/types/posts';
 
+
+// const postCard:Post =({
+
+// });
 
 interface PostItemProps {
-  post: Post
+ownerId:number,
+text:string,
+title: string,
+image:string,
+createdAt:string,
+updatedAt:string,
+avatar: Owner["avatar"]
+owner: Owner["name"],
+tagsTitle: Tag["tagTitle"],
 }
 
-const PostItem = ({ post }: PostItemProps) => {
+export interface Owner {
+  id: number,
+  name: string,
+  email: string,
+  avatar?: string,
+}
+
+export interface Tag {
+  id:number,
+  tagTitle:string,
+}
+
+const PostItem = ({
+title,
+text,
+avatar,
+image,
+tagsTitle,
+ }: PostItemProps) => {
 
   return (
     <div className="post">  
-      <img src={post.image} className="post__image"></img>
+      <img src={image} className="post__image"></img>
       <div className='post__content'>
-        <h3>{post.title}</h3>
-        <pre>{post.text}</pre>
-        <img src={post.owner.avatar} className='post__avatar'></img>
-        <p>Tags:{ }</p>
+        <h3>{title}</h3>
+        <pre>{text}</pre>
+        <img src={avatar} className='post__avatar'></img>
+        <p>Tags:{tagsTitle}</p>
       </div>
     </div>
   );

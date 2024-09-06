@@ -1,7 +1,6 @@
-import axios from "axios"
+import { Post } from "../redux/types/posts"
+import instance from "./axios"
 
-export const getAll = async () => {
-  const response = await axios.get('http://localhost:3000/posts')
-  console.log(response.data)
-  return response.data
+export const getAll = () => {
+  return instance.get<Post[]>('/posts')
 }

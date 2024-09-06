@@ -37,10 +37,9 @@ interface PostSuccess{
  type: postActions.postsSuccess
  payload:Post[]
 }
-
 interface PostDenied{
   type: postActions.postDenied
-  payload:true
+  payload:null|string,
 }
 interface PostLoading{
   type: postActions.postLoading

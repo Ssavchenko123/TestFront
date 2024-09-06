@@ -1,8 +1,13 @@
-// import { put } from "redux-saga/effects"
+import { Post, actions, postActions } from "../types/posts";
 
-// const delay = (ms:number) => new Promise(res => setTimeout(res, ms)) 
+export const requestPost = ():actions => {
+  return { type: postActions.postLoading }
+};
 
+export const requestPostSuccess = (posts:Post[]):actions => {
+  return { type: postActions.postsSuccess, payload:posts}
+};
 
-// function* getPosts (){
-
-// }
+export const requestPostError = (err: string):actions => {
+  return { type: postActions.postDenied,  payload:err}
+};

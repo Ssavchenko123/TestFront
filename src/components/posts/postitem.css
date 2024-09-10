@@ -52,3 +52,14 @@ pre{
   height: 50px;
   border-radius: 100%;
 }
+  /*  */
+.post__owner{
+position: relative;
+margin-top: -40px;
+margin-left: 80px;
+font-size: large;
+font-family: 'Courier New';
+}
+.post__tags{
+  margin-top: 20px;
+}

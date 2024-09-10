@@ -30,6 +30,7 @@ export interface Tag {
 }
 
 const PostItem = ({
+owner,
 title,
 text,
 avatar,
@@ -44,7 +45,8 @@ tagsTitle,
         <h3>{title}</h3>
         <pre>{text}</pre>
         <img src={avatar} className='post__avatar'></img>
-        <p>Tags:{tagsTitle}</p>
+        <p className='post__owner'>{owner}</p>
+        <p className='post__tags'>Tags:{tagsTitle}</p>
       </div>
     </div>
   );
